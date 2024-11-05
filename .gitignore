@@ -1,6 +1,3 @@
-android/build.gradle
-android/app/src/main/AndroidManifest.xml
-android/gradlew
 .vscode/
 
 # OSX

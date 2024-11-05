@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, Text, StyleSheet, View, TouchableOpacity } from 'react-native';
 import LogoMan from '../../assets/images/Logo/logoMan.svg';
-import LogoText from '../../assets/images/Logo/logo2.svg';
+import LogoText from '../../assets/images/Logo/logoWelcome.svg';
 
 const Welcome = () => {
   return (
