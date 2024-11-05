@@ -1,8 +1,10 @@
 import React from 'react';
-import Welcome from './src/pages/Welcome/Welcome'; // Welcome 페이지 경로에 맞게 수정
+import Welcome from './src/pages/Welcome/Welcome';
+import Login from './src/pages/Login/Login'; 
 
 const App = () => {
-  return <Welcome />;
+  // return <Welcome />;
+  return <Login />;
 };
 
 export default App;
