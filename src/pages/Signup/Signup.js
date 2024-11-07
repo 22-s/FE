@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { SafeAreaView, Text, StyleSheet, View, TextInput, TouchableOpacity, Animated } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import DatePicker from 'react-native-date-picker';
 import LogoText from '../../assets/images/Logo/logo2.svg';
 import QuizIcon from '../../assets/images/Logo/quiz.svg';
 import MannerIcon from '../../assets/images/Logo/manner.svg';
@@ -18,13 +18,13 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [date, setDate] = useState(new Date());
-  const [showDatePicker, setShowDatePicker] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
   const [isPasswordMatch, setIsPasswordMatch] = useState(true);
   const [emailAvailable, setEmailAvailable] = useState(null); // Default to null to show initial Box1
   const [toastVisible, setToastVisible] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
+  const [openDatePicker, setOpenDatePicker] = useState(false);
 
   const fadeAnim = useRef(new Animated.Value(0)).current; 
 
@@ -162,24 +162,32 @@ const Signup = () => {
 
       {/* 입사일 입력 필드 */}
       <View style={styles.inputContainer}>
-        <TouchableOpacity onPress={() => setShowDatePicker(true)} style={styles.dateButton}>
+        <TouchableOpacity onPress={() => setOpenDatePicker(true)} style={styles.dateButton}>
           <Text style={styles.dateText}>
-            {date.getFullYear()}년 {date.getMonth() + 1}월 {date.getDate()}일
+            {date.toDateString() === new Date().toDateString() ? '입사일' : `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setShowDatePicker(true)}>
+        <TouchableOpacity onPress={() => setOpenDatePicker(true)}>
           <DateIcon width={24} height={24} style={styles.icon} />
         </TouchableOpacity>
       </View>
-
-      {showDatePicker && (
-        <DateTimePicker
-          value={date}
-          mode="date"
-          display="default"
-          onChange={onChangeDate}
-        />
-      )}
+      <DatePicker
+        modal
+        open={openDatePicker}
+        date={date}
+        mode="date"
+        locale="ko"
+        onConfirm={(selectedDate) => {
+          setDate(selectedDate);
+          setOpenDatePicker(false);
+        }}
+        onCancel={() => setOpenDatePicker(false)}
+        minimumDate={new Date(1900, 0)} 
+        maximumDate={new Date()}
+        title="날짜 선택"
+        confirmText="확인"
+        cancelText="취소"
+    />
 
       {/* 회원가입 버튼 */}
       <TouchableOpacity style={styles.signUpButton}>
