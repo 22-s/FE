@@ -37,6 +37,7 @@ export default function SearchBar() {
         backgroundColor: '#EAF4FF',
         borderRadius: 20,
         padding: widthPercentage(3),
+        marginBottom: widthPercentage(3),
       },
       searchBoxTop: {
         flex: 1,
