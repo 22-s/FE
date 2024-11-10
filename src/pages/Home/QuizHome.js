@@ -1,33 +1,76 @@
-import React, {useState, useEffect} from "react";
-import {View, StyleSheet, Text, ScrollView, Dimensions, Image} from "react-native";
+import React from "react";
+import { View, StyleSheet, ScrollView, Dimensions } from "react-native";
 import SearchBar from "../../components/Home/searchBar";
 import ReviewBar from "../../components/Home/reviewBar";
-import Lighting from '../../assets/images/Logo/lighting.svg';
-import Searching from '../../assets/images/Home/search.svg';
+import CategoryBox from '../../components/Home/categoryBox';
+import Bag from '../../assets/images/Home/bag.svg';
+import Card from '../../assets/images/Home/card.svg';
+import Email from '../../assets/images/Home/email.svg';
+import Pen from '../../assets/images/Home/pen.svg';
+import Outfit from '../../assets/images/Home/outfit.svg';
+import Meeting from '../../assets/images/Home/meeting.svg';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
-const widthPercentage = (percentage) => (windowWidth * percentage) / 100;
-const heightPercentage = (percentage) => (windowHeight * percentage) / 100;
 
 export default function QuizHome() {
+    return (
+        <View style={styles.container}>
+            <ScrollView>
+                <SearchBar />
+                <ReviewBar />
+                <View style={styles.categoryArea}>
+                  <CategoryBox 
+                      title="업무의 첫걸음"
+                      subtitle={["매너", "와 일의 기본"]} // 스타일을 적용할 텍스트와 나머지 텍스트를 분리하여 배열로 전달
+                      highlightStyle={{ color: "#222222" }} // 상위에서 강조 스타일 지정
+                      icon={<Bag />}
+                  />
+                  <CategoryBox 
+                      title="첫인상을 좌우하는"
+                      subtitle="명함 공유 매너"
+                      icon={<Card />}
+                  />
+                </View>
+                <View style={styles.categoryArea}>
+                  <CategoryBox 
+                      title="이렇게 보내면 OK!"
+                      subtitle="팀장님께 메일 작성"
+                      icon={<Email />}
+                  />
+                  <CategoryBox 
+                      title="명확하고 간결하게,"
+                      subtitle="보고서 작성법"
+                      icon={<Pen />}
+                  />
+                </View>
+                <View style={styles.categoryArea}>
+                  <CategoryBox 
+                      title="상황별 스타일링 가이드"
+                      subtitle="TPO에 맞는 복장"
+                      icon={<Outfit />}
+                  />
+                  <CategoryBox 
+                      title="원활한 의견 전달"
+                      subtitle="회의 시 소통 전략"
+                      icon={<Meeting />}
+                  />
+                </View>
+            </ScrollView>
+        </View>
+    );
+}
 
-    return(
-      <View style={styles.container}>
-        <ScrollView>
-          <SearchBar />
-          <ReviewBar/>
-        </ScrollView>
-      </View>
-      
-    )
-  }
-  
-  const styles = StyleSheet.create({
-      container: {
+const styles = StyleSheet.create({
+    container: {
         backgroundColor: 'white',
         padding: 20,
-      },
-      
-  })
+    },
+    categoryArea: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      padding: 5,
+      paddingLeft: 10,
+      paddingRight: 10,
+      marginTop: 10,
+    }
+});
