@@ -21,8 +21,8 @@ export default function QuizHome() {
                 <View style={styles.categoryArea}>
                   <CategoryBox 
                       title="업무의 첫걸음"
-                      subtitle={["매너", "와 일의 기본"]} // 스타일을 적용할 텍스트와 나머지 텍스트를 분리하여 배열로 전달
-                      highlightStyle={{ color: "#222222" }} // 상위에서 강조 스타일 지정
+                      subtitle={["매너", "와 일의 기본"]} 
+                      highlightStyle={{ color: "#222222" }}
                       icon={<Bag />}
                   />
                   <CategoryBox 
