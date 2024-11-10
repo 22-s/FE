@@ -60,15 +60,15 @@ const LoginPage = () => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
           <MannerIcon width={24} height={24} />
-          <Text style={styles.navTextInactive}>매너설명서</Text>
+          <Text style={styles.navText}>매너설명서</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
           <WordIcon width={24} height={24} />
-          <Text style={styles.navTextInactive}>업무용어</Text>
+          <Text style={styles.navText}>업무용어</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
           <TrendIcon width={24} height={24} />
-          <Text style={styles.navTextInactive}>트렌드</Text>
+          <Text style={styles.navText}>트랜드</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

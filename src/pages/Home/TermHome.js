@@ -1,14 +1,14 @@
 import React from "react";
 import { View, StyleSheet, ScrollView, Dimensions } from "react-native";
 import SearchBar from "../../components/Home/searchBar";
-import ReviewBar from "../../components/Home/reviewBar";
+import BookmarkBar from "../../components/Home/bookmarkBar";
 import CategoryBox from '../../components/Home/categoryBox';
-import Bag from '../../assets/images/Home/bag.svg';
-import Card from '../../assets/images/Home/card.svg';
-import Email from '../../assets/images/Home/email.svg';
-import Pen from '../../assets/images/Home/pen.svg';
-import Outfit from '../../assets/images/Home/outfit.svg';
-import Meeting from '../../assets/images/Home/meeting.svg';
+import Accounting from '../../assets/images/Home/accounting.svg';
+import IT from '../../assets/images/Home/it.svg';
+import Marketing from '../../assets/images/Home/marketing.svg';
+import HR from '../../assets/images/Home/hr.svg';
+import Captain from '../../assets/images/Home/captain.svg';
+import Negotiate from '../../assets/images/Home/negotiate.svg';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -17,42 +17,41 @@ export default function QuizHome() {
         <View style={styles.container}>
             <ScrollView>
                 <SearchBar />
-                <ReviewBar />
+                <BookmarkBar />
                 <View style={styles.categoryArea}>
                   <CategoryBox 
-                      title="업무의 첫걸음"
-                      subtitle={["매너", "와 일의 기본"]} 
-                      highlightStyle={{ color: "#222222" }}
-                      icon={<Bag />}
+                      title="정확한 회계 처리"
+                      subtitle="회계/재무" 
+                      icon={<Accounting />}
                   />
                   <CategoryBox 
-                      title="첫인상을 좌우하는"
-                      subtitle="명함 공유 매너"
-                      icon={<Card />}
+                      title="IT 프로젝트 관리"
+                      subtitle="기술 IT"
+                      icon={<IT />}
                   />
                 </View>
                 <View style={styles.categoryArea}>
                   <CategoryBox 
-                      title="이렇게 보내면 OK!"
-                      subtitle="팀장님께 메일 작성"
-                      icon={<Email />}
+                      title="효과적인 고객 유치"
+                      subtitle="마케팅/세일즈"
+                      icon={<Marketing />}
                   />
                   <CategoryBox 
-                      title="명확하고 간결하게,"
-                      subtitle="보고서 작성법"
-                      icon={<Pen />}
+                      title="인사 관리를 위한"
+                      subtitle="HR/조직"
+                      icon={<HR />}
                   />
                 </View>
                 <View style={styles.categoryArea}>
-                  <CategoryBox 
-                      title="상황별 스타일링 가이드"
-                      subtitle="TPO에 맞는 복장"
-                      icon={<Outfit />}
-                  />
                   <CategoryBox 
                       title="원활한 의견 전달"
                       subtitle="회의 시 소통 전략"
-                      icon={<Meeting />}
+                      icon={<Captain />}
+                  />
+                  <CategoryBox 
+                      title="효과적인 협상 전략"
+                      subtitle="협상/의사결정"
+                      icon={<Negotiate />}
                   />
                 </View>
             </ScrollView>
