@@ -11,7 +11,7 @@ const CorrectButton = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 100,
+    width: 30,
     height: 14,
     backgroundColor: '#E5EFFF',
     borderRadius: 6,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ScrollView, Text, StyleSheet} from 'react-native';
+import {View, ScrollView, StyleSheet} from 'react-native';
 import QuizListComponent from '../../components/QuizComponent/QuizListComponent';
 
 const QuizList = () => {
@@ -14,7 +14,11 @@ const QuizList = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#F3F3F3',
+    height: '100%',
     paddingLeft: 10,
     paddingRight: 10,
   },
