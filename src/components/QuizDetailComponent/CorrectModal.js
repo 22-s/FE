@@ -2,6 +2,7 @@ import React from 'react';
 import {Modal, View, StyleSheet, Text} from 'react-native';
 import NextQuizButton from './button/NextQuizButton';
 import AddReviewButton from './button/AddReviewButton';
+import XButton from '../../assets/images/QuizDetail/XButton.svg';
 
 const CorrectModal = ({content, modalVisible, setModalVisible, isCorrect}) => {
   return (
@@ -14,6 +15,9 @@ const CorrectModal = ({content, modalVisible, setModalVisible, isCorrect}) => {
       }}>
       <View style={styles.centeredView}>
         <View style={styles.modalContainer}>
+          <View style={styles.top}>
+            <XButton width={17} height={17} />
+          </View>
           <View style={styles.modalTitle}>
             <Text
               style={[
@@ -51,6 +55,12 @@ const styles = StyleSheet.create({
     height: 445,
     borderRadius: 15,
     backgroundColor: '#FFFFFF',
+    padding: 21,
+  },
+  top: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
   },
   modalTitle: {
     width: 215.841,

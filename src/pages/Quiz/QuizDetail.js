@@ -8,7 +8,7 @@ import CorrectModal from '../../components/QuizDetailComponent/CorrectModal';
 
 const QuizDetail = () => {
   const [modalVisible, setModalVisible] = useState(true);
-  const [isCorrect, setIsCorrect] = useState(true);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   return (
     <View style={styles.container}>
