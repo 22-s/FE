@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import Title from '../../components/QuizDetailComponent/Title';
 import Content from '../../components/QuizDetailComponent/Content';
 import O from '../../assets/images/QuizDetail/O.svg';
 import X from '../../assets/images/QuizDetail/X.svg';
+import CorrectModal from '../../components/QuizDetailComponent/CorrectModal';
 
 const QuizDetail = () => {
+  const [modalVisible, setModalVisible] = useState(true);
+  const [isCorrect, setIsCorrect] = useState(true);
+
   return (
     <View style={styles.container}>
       <View marginBottom={12}>
@@ -18,6 +22,12 @@ const QuizDetail = () => {
         <O width={165} height={75} />
         <X width={165} height={75} />
       </View>
+      <CorrectModal
+        content="출근 시각 10분 일찍 출근해서 업무 시작 준비를 해야합니다! 여유를 가지고 하루 일과 및 계획을 점검하며, 간단한 청소 정리정돈으로 하루를 시작합니다."
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        isCorrect={isCorrect}
+      />
     </View>
   );
 };
