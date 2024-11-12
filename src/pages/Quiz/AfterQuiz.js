@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Button} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Title from '../../components/QuizDetailComponent/Title';
 import Content from '../../components/QuizDetailComponent/Content';
 import CorrectModal from '../../components/QuizDetailComponent/CorrectModal';
 import NavButtonNext from '../../components/AfterQuizComponent/NavButtonNext';
 import NavButtonPrev from '../../components/AfterQuizComponent/NavButtonPrev';
+import OpenModalButton from '../../components/AfterQuizComponent/OpenModalButton';
+import AddReviewButton from '../../components/AfterQuizComponent/AddReviewButton';
 
 const AfterQuiz = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -28,6 +30,10 @@ const AfterQuiz = () => {
       <View style={styles.buttonContainer}>
         <NavButtonPrev />
         <NavButtonNext />
+      </View>
+      <View style={styles.bottomContainer}>
+        <OpenModalButton />
+        <AddReviewButton />
       </View>
     </View>
   );
@@ -56,6 +62,12 @@ const styles = StyleSheet.create({
     width: '95%',
     position: 'absolute',
     zIndex: 10,
+  },
+  bottomContainer: {
+    width: 330,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 
