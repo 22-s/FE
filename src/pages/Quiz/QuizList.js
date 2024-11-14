@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, ScrollView, StyleSheet} from 'react-native';
-import QuizListComponent from '../../components/QuizComponent/QuizListComponent';
-import LockedQuizListComponent from '../../components/QuizComponent/LockedQuizListComponent';
+import QuizListComponent from '../../components/QuizListComponent/QuizComponent';
+import LockedQuizListComponent from '../../components/QuizListComponent/LockedQuizListComponent';
 
 const QuizList = () => {
   return (
