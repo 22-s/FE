@@ -1,10 +1,11 @@
 import React from 'react';
 import {View} from 'react-native';
+import QuizDetail from './src/pages/Quiz/QuizDetail';
 import Welcome from './src/pages/Welcome/Welcome';
-import QuizList from './src/pages/Quiz/QuizList';
+import Login from './src/pages/Login/Login';
 
 const App = () => {
-  return <QuizList />;
+  return <QuizDetail />;
 };
 
 export default App;
